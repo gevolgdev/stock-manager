@@ -53,14 +53,17 @@ const soldProduct = {};
 
 const sellProduct = (product) => {
   for (let i = 0; i < stockProducts.length; i++) {
+    let stockQuantity = Number(stockProducts[i].quantity);
+    let soldQuantity = Number(product.quantitySell);
+
     if(product.nameSell === stockProducts[i].name){
-      if(product.quantitySell > stockProducts[i].quantity) {
+      if(soldQuantity > stockQuantity ) {
         console.log('Não há estoque suficiente!');
         break;
-      };
-      const soldQuantity = stockProducts[i].quantity - product.quantitySell;
-      stockProducts[i].quantity = soldQuantity;
-      stockProducts[i].quantity === 0 && delete stockProducts[i]
+      }
+      const soldQuantityValue = stockQuantity - soldQuantity;
+      stockProducts[i].quantity = soldQuantityValue;
+      stockProducts[i].quantity === 0 && delete stockProducts[i];
       break;
     }
   }
