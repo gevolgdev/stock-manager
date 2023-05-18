@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gerenciamento de Estoque</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Sistema de Gerenciamento de Estoque</h1>
+  
+    <div class="stock-container">
+      <h2>Estoque</h2>
+      <table id="stock-table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody id="stock-body">
+          <!-- Aqui serão adicionados os produtos dinamicamente -->
+          <!-- <tr>
+            <td>Mackbook M1</td>
+            <td>R$3000</td>
+            <td>324</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="form-container">
+      <h2>Adicionar Produto</h2>
+      <form id="add-product-form">
+        <div class="form-group">
+          <label for="product-name">Nome do Produto:</label>
+          <input type="text" id="product-name" required>
+        </div>
+        <div class="form-group">
+          <label for="product-price">Preço:</label>
+          <input type="number" id="product-price" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="product-quantity">Quantidade:</label>
+          <input type="number" id="product-quantity" required>
+        </div>
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
+  
+    <div class="form-container">
+      <h2>Vender Produto</h2>
+      <form id="sell-product-form">
+        <div class="form-group">
+          <label for="product-name-sell">Nome do Produto:</label>
+          <input type="text" id="product-name-sell" required>
+        </div>
+        <div class="form-group">
+          <label for="product-quantity-sell">Quantidade:</label>
+          <input type="number" id="product-quantity-sell" required>
+        </div>
+        <button type="submit">Vender</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
