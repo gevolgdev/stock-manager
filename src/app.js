@@ -12,6 +12,7 @@ const sellButton = document.getElementById('sell-button');
 // -------------------------------------------------
 
 const stockProducts = [];
+
 const product = {};
 
 // Render Products
@@ -63,11 +64,11 @@ const sellProduct = (product) => {
       }
       const soldQuantityValue = stockQuantity - soldQuantity;
       stockProducts[i].quantity = soldQuantityValue;
-      stockProducts[i].quantity === 0 && delete stockProducts[i];
       break;
     }
   }
-  renderProducts(stockProducts);
+  stockProducts.map((item, index) => item.quantity == 0 && stockProducts.splice(index, 1));
+  
 };
 
 const isSellingProduct = (e) => {
