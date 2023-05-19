@@ -12,7 +12,7 @@ const sellButton = document.getElementById('sell-button');
 // -------------------------------------------------
 
 const stockProducts = [];
-
+const stockEmpty = [{message: 'Estoque vazio!'}];
 const product = {};
 
 // Render Products
@@ -68,7 +68,7 @@ const sellProduct = (product) => {
     }
   }
   stockProducts.map((item, index) => item.quantity == 0 && stockProducts.splice(index, 1));
-  
+  stockProducts.length === 0 ? renderProducts(stockEmpty) : renderProducts(stockProducts);
 };
 
 const isSellingProduct = (e) => {
